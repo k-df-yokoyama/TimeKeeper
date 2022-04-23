@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        root.findViewById<Button>(R.id.button_home).setOnClickListener { view ->
+        binding.buttonHome.setOnClickListener { view ->
                 root.findNavController().navigate(
                     R.id.action_navigation_home_to_navigation_dashboard)
         }
