@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">MyThirdApp2</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">TimeKeeper</string>
+    <string name="title_home">Home1</string>
+    <string name="title_dashboard">Dashboard1</string>
+    <string name="title_notifications">Notifications1</string>
+
+    <string name="txtvw_input_time_msg">開始日・終了日、メモを入力して下さい</string>
+    <string name="txtvw_start_time">開始日時</string>
+    <string name="txtvw_end_time">終了日時</string>
+    <string name="txtvw_memo">メモ</string>
+    <string name="btn_new">新規</string>
+    <string name="btn_save">保存</string>
+
+    <string name="saved_msg">開始日・終了日、メモが保存されました</string>
 </resources>
