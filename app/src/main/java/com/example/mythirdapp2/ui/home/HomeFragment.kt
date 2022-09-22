@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.mythirdapp2.R
 import com.example.mythirdapp2.databinding.FragmentHomeBinding
 
@@ -33,12 +33,26 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+//        (2022/09/18)SAM変換を逆変換してみる
+//        https://developer.android.com/reference/androidx/lifecycle/Observer?hl=ja
+//        homeViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
+//        homeViewModel.text.observe(viewLifecycleOwner, Observer<String> { text ->
+//            textView.text = text
+//        })
+        homeViewModel.text.observe(viewLifecycleOwner, object: Observer<String> {
+            override fun onChanged(text: String) {
+                textView.text = text
+            }
+        })
         binding.buttonHome.setOnClickListener { view ->
                 root.findNavController().navigate(
                     R.id.action_navigation_home_to_navigation_dashboard)
+        }
+        binding.btnNew.setOnClickListener {
+            onNewButtonClick(textView)
+            //edttxt_start_time
         }
         return root
     }
@@ -46,5 +60,24 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun onNewButtonClick(view: View) {
+        //[Android & Kotlin] View Binding はfindViewByIdの後継
+        //https://akira-watson.com/android/kotlin/view-binding.html
+        //val etStartTime = findViewById<EditText>(R.id.edttxt_start_time)
+        //val etEndTime = findViewById<EditText>(R.id.edttxt_end_time)
+        //val etMemo = findViewById<EditText>(R.id.edttxt_memo)
+        binding.edttxtStartTime.setText("")
+        binding.edttxtEndTime.setText("")
+        binding.edttxtMemo.setText("")
+
+        //delete input value
+        //etStartTime.setText("")
+        //etEndTime.setText("")
+        //etMemo.setText("")
+        //       val tvSavedMsg = findViewById<TextView>(R.id.saved_msg).apply {
+        //           text = ""
+        //       }
     }
 }
