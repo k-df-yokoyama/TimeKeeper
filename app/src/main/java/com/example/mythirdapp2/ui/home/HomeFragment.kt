@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
                     R.id.action_navigation_home_to_navigation_dashboard)
         }
         binding.btnNew.setOnClickListener {
+            //ToDo: 以下でtextViewを引数として渡しているのは不適切と思われる
             onNewButtonClick(textView)
             //edttxt_start_time
         }
@@ -79,5 +80,6 @@ class HomeFragment : Fragment() {
         //       val tvSavedMsg = findViewById<TextView>(R.id.saved_msg).apply {
         //           text = ""
         //       }
+        binding.txtvwMsg.text = "New!"
     }
 }

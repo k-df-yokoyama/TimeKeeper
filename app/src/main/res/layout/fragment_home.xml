@@ -35,7 +35,7 @@
         android:id="@+id/txtvw_input_time_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:text="@string/txtvw_input_time_msg"
@@ -48,7 +48,7 @@
         android:id="@+id/txtvw_start_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:text="@string/txtvw_start_time"
         app:layout_constraintEnd_toStartOf="@+id/edttxt_start_time"
@@ -76,7 +76,7 @@
         android:id="@+id/txtvw_end_time"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:text="@string/txtvw_end_time"
         app:layout_constraintEnd_toStartOf="@+id/edttxt_end_time"
@@ -104,7 +104,7 @@
         android:id="@+id/txtvw_memo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:text="@string/txtvw_memo"
         app:layout_constraintEnd_toStartOf="@+id/edttxt_memo"
@@ -151,4 +151,16 @@
         app:layout_constraintStart_toEndOf="@+id/btn_save"
         app:layout_constraintTop_toBottomOf="@+id/edttxt_memo"
         android:onClick="onNewButtonClick" />
+
+    <TextView
+        android:id="@+id/txtvw_msg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save" />
 </androidx.constraintlayout.widget.ConstraintLayout>
