@@ -86,6 +86,7 @@ class HomeFragment : Fragment() {
         TaskRepository.insertTask(requireContext(), task)
 
         val arrayTask = TaskRepository.loadAllTask(requireContext())
+        /*
         val singleTaskBuilder = StringBuilder()
         val i = 0
         singleTaskBuilder.append(arrayTask.get(i).id).append(",")
@@ -94,8 +95,21 @@ class HomeFragment : Fragment() {
             .append(arrayTask.get(i).endtime).append(",")
             .append(arrayTask.get(i).memo)
             .append(System.getProperty("line.separator"))
-        
-        binding.txtvwMsg.text = "" + singleTaskBuilder + getResources().getString(R.string.txtvw_saved_msg)
+         */
+
+        var allTaskBuilder = StringBuilder()
+        for (i in 0 until arrayTask.size) {
+            val singleTaskBuilder = StringBuilder()
+            singleTaskBuilder.append(arrayTask.get(i).id).append(",")
+                .append(arrayTask.get(i).date).append(",")
+                .append(arrayTask.get(i).starttime).append(",")
+                .append(arrayTask.get(i).endtime).append(",")
+                .append(arrayTask.get(i).memo)
+                .append(System.getProperty("line.separator"))
+            allTaskBuilder = singleTaskBuilder.append(allTaskBuilder)
+        }
+
+        binding.txtvwMsg.text = "" + getResources().getString(R.string.txtvw_saved_msg) + System.getProperty("line.separator") + allTaskBuilder
     }
 
     fun onNewButtonClick() {
