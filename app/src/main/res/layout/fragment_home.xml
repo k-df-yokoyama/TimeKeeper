@@ -136,7 +136,8 @@
         android:layout_marginTop="8dp"
         android:text="@string/btn_save"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edttxt_memo" />
+        app:layout_constraintTop_toBottomOf="@+id/edttxt_memo"
+        android:onClick="onSaveButtonClick" />
 
     <Button
         android:id="@+id/btn_new"

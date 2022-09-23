@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -50,10 +49,11 @@ class HomeFragment : Fragment() {
                 root.findNavController().navigate(
                     R.id.action_navigation_home_to_navigation_dashboard)
         }
+        binding.btnSave.setOnClickListener {
+            onSaveButtonClick()
+        }
         binding.btnNew.setOnClickListener {
-            //ToDo: 以下でtextViewを引数として渡しているのは不適切と思われる
-            onNewButtonClick(textView)
-            //edttxt_start_time
+            onNewButtonClick()
         }
         return root
     }
@@ -63,7 +63,16 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    fun onNewButtonClick(view: View) {
+    fun onSaveButtonClick() {
+        //[Android & Kotlin] View Binding はfindViewByIdの後継
+        //https://akira-watson.com/android/kotlin/view-binding.html
+        //binding.edttxtStartTime.setText("")
+        //binding.edttxtEndTime.setText("")
+        //binding.edttxtMemo.setText("")
+        binding.txtvwMsg.text = "Save!"
+    }
+
+    fun onNewButtonClick() {
         //[Android & Kotlin] View Binding はfindViewByIdの後継
         //https://akira-watson.com/android/kotlin/view-binding.html
         binding.edttxtStartTime.setText("")
