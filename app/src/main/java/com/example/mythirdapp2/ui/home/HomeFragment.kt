@@ -66,20 +66,9 @@ class HomeFragment : Fragment() {
     fun onNewButtonClick(view: View) {
         //[Android & Kotlin] View Binding はfindViewByIdの後継
         //https://akira-watson.com/android/kotlin/view-binding.html
-        //val etStartTime = findViewById<EditText>(R.id.edttxt_start_time)
-        //val etEndTime = findViewById<EditText>(R.id.edttxt_end_time)
-        //val etMemo = findViewById<EditText>(R.id.edttxt_memo)
         binding.edttxtStartTime.setText("")
         binding.edttxtEndTime.setText("")
         binding.edttxtMemo.setText("")
-
-        //delete input value
-        //etStartTime.setText("")
-        //etEndTime.setText("")
-        //etMemo.setText("")
-        //       val tvSavedMsg = findViewById<TextView>(R.id.saved_msg).apply {
-        //           text = ""
-        //       }
         binding.txtvwMsg.text = "New!"
     }
 }
