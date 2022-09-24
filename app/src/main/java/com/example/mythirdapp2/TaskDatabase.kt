@@ -5,6 +5,7 @@ import androidx.room.*
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
+//わからないこと：exportSchema = false
 @Database(entities = arrayOf(Task::class), version = 3, exportSchema = false)
 abstract class TaskDatabase : RoomDatabase() {
     //クラス内のprivate定数を宣言するためにcompanion objectブロックとする。
